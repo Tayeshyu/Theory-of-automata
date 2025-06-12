@@ -1,0 +1,24 @@
+package sample;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        DBLogger.clearLogs();
+        Parent root = FXMLLoader.load(getClass().getResource("resources/sample.fxml"));
+        stage.setTitle("Будильник");
+        stage.setScene(new Scene(root, 600, 400));
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+}
